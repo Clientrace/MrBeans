@@ -1,34 +1,45 @@
 package system_manager;
 
+import ip_manager.IPManager;
+
 /**
  * Created by clientrace on 11/21/16.
  */
 public class SystemManager {
 
-    private final static int INITIALIZATION = 0;
-    private final static int INPUT = 1;
-    private final static int IMG_PROC = 2;
-    private final static int ANN = 3;
-    private final static int OUTPUT = 4;
-    private final static int DISPLAY = 5;
+    private final  int INITIALIZATION = 0;
+    private final int INPUT = 1;
+    private final int IMG_PROC = 2;
+    private final int ANN = 3;
+    private final int OUTPUT = 4;
+    private final int DISPLAY = 5;
 
-    private static int state;
+    private int state;
+    private int info[];
+
+    private IPManager ipManager;
 
     public void init_SystemManager(){
+        info = new int[6];
         state = INITIALIZATION;
-    }
+        ipManager = new IPManager();
+    }//init_SystemManager
 
     public void execute_SystemManager(){
         while(true){
             switch (state){
                 case INITIALIZATION:{
-
+                    ipManager.init_IPManager();
                 }break;
 
                 case INPUT:{
 
                 }break;
+
+                case IMG_PROC:{
+                    ipManager.execute_IPManager();
+                }break;
             }
         }
-    }
+    }//execute_SystemManager
 }
