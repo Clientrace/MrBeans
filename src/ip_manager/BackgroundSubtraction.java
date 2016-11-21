@@ -1,6 +1,7 @@
 package ip_manager;
 
 import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
 
 /**
  * Created by clientrace on 11/21/16.
@@ -13,12 +14,11 @@ public class BackgroundSubtraction {
     private int info[] = new int[6];
 
     //to be changed:
-    private final double THRESH_LOW[] = {255,255,255};
-    private final double
+    private double THRESH_LOW[];
+    private double THRESH_HIGH[];
 
-
-    public BackgroundSubtraction(){
-
+    public BackgroundSubtraction(Mat imgRaw){
+        this.imgRaw = imgRaw;
     }//BackgroundSubtraction
 
     public void init_BackgroundSubtraction(){
