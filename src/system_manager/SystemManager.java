@@ -14,9 +14,11 @@ public class SystemManager {
 
     private static int state;
 
-    public static void main(String[] args){
+    public void init_SystemManager(){
         state = INITIALIZATION;
+    }
 
+    public void execute_SystemManager(){
         while(true){
             switch (state){
                 case INITIALIZATION:{
@@ -24,10 +26,6 @@ public class SystemManager {
                 }break;
 
                 case INPUT:{
-
-                }break;
-
-                case IMG_PROC:{
 
                 }break;
             }
