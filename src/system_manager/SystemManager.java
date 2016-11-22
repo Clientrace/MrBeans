@@ -1,5 +1,6 @@
 package system_manager;
 
+import input_manager.InputManager;
 import ip_manager.IPManager;
 
 /**
@@ -18,11 +19,14 @@ public class SystemManager {
     private int info[];
 
     private IPManager ipManager;
+    private InputManager inputManager;
 
     public void init_SystemManager(){
+
         info = new int[6];
         state = INITIALIZATION;
-        ipManager = new IPManager();
+        inputManager = new InputManager();
+        ipManager = new IPManager(inputManager.getImgOrig());
     }//init_SystemManager
 
     public void execute_SystemManager(){

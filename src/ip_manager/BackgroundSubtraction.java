@@ -17,12 +17,12 @@ public class BackgroundSubtraction {
     private double THRESH_LOW[];
     private double THRESH_HIGH[];
 
-    public BackgroundSubtraction(Mat imgRaw){
+    public BackgroundSubtraction(){
         this.imgRaw = imgRaw;
     }//BackgroundSubtraction
 
     public void init_BackgroundSubtraction(){
-
+        
     }//init_BackgroundSubtraction
 
     public void execute_BackgroundSubtraction(){
