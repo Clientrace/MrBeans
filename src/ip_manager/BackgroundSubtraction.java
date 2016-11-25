@@ -9,7 +9,7 @@ import org.opencv.imgproc.Imgproc;
 public class BackgroundSubtraction {
 
     //to be renamed:
-    private Mat imgRaw;
+    private Mat imgOrig;
     private Mat bgsOutput;
     private int info[] = new int[6];
 
@@ -17,16 +17,13 @@ public class BackgroundSubtraction {
     private double THRESH_LOW[];
     private double THRESH_HIGH[];
 
-    public BackgroundSubtraction(){
-        this.imgRaw = imgRaw;
-    }//BackgroundSubtraction
-
-    public void init_BackgroundSubtraction(){
-        
+    public void init_BackgroundSubtraction(Mat imgOrig){
+        System.out.println("Initializing Background Subtraction...");
+        this.imgOrig = imgOrig.clone();
     }//init_BackgroundSubtraction
 
     public void execute_BackgroundSubtraction(){
-
+        System.out.println("Executing Background Subtraction...");
     }//execute_BackgroundSubtraction
 
     public Mat getBgsOutput(){

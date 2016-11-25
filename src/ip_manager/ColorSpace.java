@@ -14,12 +14,12 @@ public class ColorSpace {
     private Mat imgGrayScale;
     private Mat imgLab;
 
-    public ColorSpace(Mat imgOrig){
+    public void init_ColorSpace(Mat imgOrig) {
+        System.out.println("Initializing ColorSpaces...");
         this.imgOrig = imgOrig.clone();
-    }
-
-    public void init_ColorSpace(){
-        info = new int[6];
+        imgHSV = new Mat();
+        imgGrayScale = new Mat();
+        imgLab = new Mat();
     }//init_ColorSpace
 
     public void execute_ColorSpace(){
