@@ -11,7 +11,6 @@ public class IPManager {
     //Default values:
     public static final Scalar THRESH_LOW = new Scalar(70,130,50);
     public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
-    public static Mat procImg;
 
     private int[] info;
     private final int INIT = 0;
@@ -19,15 +18,15 @@ public class IPManager {
     private final int BGSUBTRACTION = 2;
     private final int SEGMENTATION = 3;
     private final int NOISEFILTER = 4;
+    private int state;
 
     private ColorSpace colorSpace;
     private BackgroundSubtraction backgroundSubtraction;
     private Segmentation segmentation;
     private NoiseFiltering noiseFiltering;
 
-    private ImageData imageData;
+    public ImageData imageData;
     private Mat imgOrig;
-    private int state;
 
     public void init_IPManager(){
         System.out.println("Initializing IPManager...");
@@ -46,25 +45,24 @@ public class IPManager {
         while(!done){
             switch (state){
                 case INIT:{
-                    procImg = imgOrig;
-                    colorSpace.init_ColorSpace(imageData);
-                    backgroundSubtraction.init(imageData);
-                    segmentation.init_Segmentation(imageData);
-                    noiseFiltering.init_NoiseFiltering(imageData);
+                    imageData.setImgOrig(imgOrig);
+                    colorSpace.init(this);
+                    backgroundSubtraction.init(this);
+                    segmentation.init(this);
+                    noiseFiltering.init(this);
                     state = COLOR_SPACE;
                 }break;
                 case COLOR_SPACE:{
-                    colorSpace.execute_ColorSpace();
+                    colorSpace.execute();
                     state = BGSUBTRACTION;
                 }break;
                 case BGSUBTRACTION:{
                     backgroundSubtraction.execute();
-                    procImg = backgroundSubtraction.getBgsOutput();
                     state = SEGMENTATION;
                 }break;
 
                 case SEGMENTATION:{
-                    segmentation.execute_Segmentation();
+                    segmentation.execute();
                     state = NOISEFILTER;
                 }break;
 
@@ -80,7 +78,10 @@ public class IPManager {
 
     }
 
-    public void setImgOrig(Mat imgOrig){
-        this.imgOrig = imgOrig;
+    public void setImgOrig(Mat imgOrig){this.imgOrig = imgOrig;}
+
+    public ImageData getImageData(){
+        return imageData;
     }
+
 }

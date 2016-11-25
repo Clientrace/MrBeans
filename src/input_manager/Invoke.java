@@ -48,4 +48,14 @@ public class Invoke {
         return image;
     }
 
+    public static boolean hasStringVal(String[] group, String val){
+        if(group==null)
+            return false;
+        for(int i=0;i<group.length;i++){
+            if(val.trim().equals(group[i].trim()))
+                return true;
+        }
+        return false;
+    }
+
 }

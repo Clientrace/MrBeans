@@ -1,20 +1,16 @@
 package ip_manager;
 
-import java.awt.*;
+import org.opencv.core.Mat;
+
 
 /**
  * Created by clientrace on 11/26/16.
  */
 public abstract class ImgProcessor {
-    protected ImageData imageData;
+    protected IPManager ipManager;
 
-    public void init(ImageData imageData){
-        this.imageData = imageData;
-    }
+    public abstract void init(IPManager ipManager);
     public abstract void execute();
     public abstract void destroy();
-    public ImageData getImageData(){
-        return  imageData;
-    }
 
 }

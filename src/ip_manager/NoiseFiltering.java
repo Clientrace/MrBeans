@@ -7,19 +7,19 @@ import java.awt.*;
 /**
  * Created by clientrace on 11/26/16.
  */
-public class NoiseFiltering {
+public class NoiseFiltering extends ImgProcessor{
 
-    private ImageData imageData;
+    private IPManager ipManager;
 
-    public void init_NoiseFiltering(ImageData imageData){
-        this.imageData = imageData;
+    public void init(IPManager ipManager){
+        this.ipManager = ipManager;
     }
 
-    public void exec_NoiseFiltering(){
+    public void execute(){
 
     }
 
-    public void destroy_NoiseFiltering(){
+    public void destroy(){
 
     }
 }

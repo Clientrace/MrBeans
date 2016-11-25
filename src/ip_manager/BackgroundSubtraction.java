@@ -1,5 +1,6 @@
 package ip_manager;
 
+import input_manager.Invoke;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 
@@ -14,12 +15,13 @@ public class BackgroundSubtraction extends ImgProcessor{
     public static int state;
 
     private Mat bgsOutput;
+    private IPManager ipManager;
     private int info[] = new int[6];
 
-    public void init(ImageData imageData){
+    public void init(IPManager ipManager){
         System.out.println("Initializing Background Subtraction...");
+        this.ipManager = ipManager;
         state = THRESHOLD;
-        this.imageData = imageData;
         bgsOutput = new Mat();
     }//init_BackgroundSubtraction
 
@@ -30,13 +32,14 @@ public class BackgroundSubtraction extends ImgProcessor{
             switch (state){
                 case THRESHOLD: {
                     System.out.println("\tApplying Thresholding...");
-                    Core.inRange(imageData.getImgHSV(),IPManager.THRESH_LOW,IPManager.THRESH_HIGH,bgsOutput);
+                    Core.inRange(ipManager.imageData.getImgHSV(),IPManager.THRESH_LOW,IPManager.THRESH_HIGH,bgsOutput);
                     state = BINARIZE;
                 }
                 break;
-                case BINARIZE:{
+                case BINARIZE: {
                     System.out.println("\tApplying Binarization...");
                     Core.bitwise_not(bgsOutput,bgsOutput);
+                    ipManager.imageData.setBgsOutput(bgsOutput);
                     done = true;
                 }break;
             }

@@ -21,9 +21,9 @@ public class SystemManager {
     public static int state;
     private int info[];
 
-    private IPManager ipManager;
-    private InputManCLI inputManCLI;
-    private ANNManager annManager;
+    public IPManager ipManager;
+    public InputManCLI inputManCLI;
+    public ANNManager annManager;
 
     public void init_SystemManager(){
         System.out.println("Initializing System Manager...");
@@ -38,7 +38,7 @@ public class SystemManager {
         while(true){
             switch (state){
                 case INIT:{
-                    inputManCLI.init_InputManager();
+                    inputManCLI.init_InputManager(this);
                     ipManager.init_IPManager();
                     annManager.init_ANNManager();
                     state = INPUT;
@@ -59,7 +59,7 @@ public class SystemManager {
                 }break;
 
                 case DISPLAY:{
-                    state = INIT;
+                    state = INPUT;
                 }
             }
         }
