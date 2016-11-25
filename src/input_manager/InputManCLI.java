@@ -38,7 +38,6 @@ public class InputManCLI {
                     System.out.println(imgPath);
                 }break;
                 case "exec":{
-                    System.out.println("Executing...");
                     SystemManager.state = SystemManager.IMG_PROC;
                     waitForInput = false;
                 }break;

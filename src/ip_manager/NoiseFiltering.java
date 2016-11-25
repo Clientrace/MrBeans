@@ -2,15 +2,17 @@ package ip_manager;
 
 import org.opencv.core.Mat;
 
+import java.awt.*;
+
 /**
  * Created by clientrace on 11/26/16.
  */
 public class NoiseFiltering {
 
-    private ColorSpace colorSpace;
+    private ImageData imageData;
 
-    public void init_NoiseFiltering(ColorSpace colorSpace){
-        this.colorSpace = colorSpace;
+    public void init_NoiseFiltering(ImageData imageData){
+        this.imageData = imageData;
     }
 
     public void exec_NoiseFiltering(){

@@ -3,8 +3,6 @@ package ip_manager;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 
-import java.awt.*;
-
 /**
  * Created by clientrace on 11/21/16.
  */
@@ -27,6 +25,7 @@ public class IPManager {
     private Segmentation segmentation;
     private NoiseFiltering noiseFiltering;
 
+    private ImageData imageData;
     private Mat imgOrig;
     private int state;
 
@@ -34,6 +33,7 @@ public class IPManager {
         System.out.println("Initializing IPManager...");
         info = new int[6];
         state = INIT;
+        imageData = new ImageData();
         colorSpace = new ColorSpace();
         backgroundSubtraction = new BackgroundSubtraction();
         segmentation = new Segmentation();
@@ -47,10 +47,10 @@ public class IPManager {
             switch (state){
                 case INIT:{
                     procImg = imgOrig;
-                    colorSpace.init_ColorSpace(imgOrig);
-                    backgroundSubtraction.init_BackgroundSubtraction(colorSpace);
-                    segmentation.init_Segmentation(colorSpace);
-                    noiseFiltering.init_NoiseFiltering(colorSpace);
+                    colorSpace.init_ColorSpace(imageData);
+                    backgroundSubtraction.init(imageData);
+                    segmentation.init_Segmentation(imageData);
+                    noiseFiltering.init_NoiseFiltering(imageData);
                     state = COLOR_SPACE;
                 }break;
                 case COLOR_SPACE:{
@@ -58,7 +58,7 @@ public class IPManager {
                     state = BGSUBTRACTION;
                 }break;
                 case BGSUBTRACTION:{
-                    backgroundSubtraction.execute_BackgroundSubtraction();
+                    backgroundSubtraction.execute();
                     procImg = backgroundSubtraction.getBgsOutput();
                     state = SEGMENTATION;
                 }break;
@@ -75,6 +75,10 @@ public class IPManager {
             }
         }
     }//execute_IPManager
+
+    public void destroy_IPManager(){
+
+    }
 
     public void setImgOrig(Mat imgOrig){
         this.imgOrig = imgOrig;
