@@ -1,6 +1,6 @@
 package system_manager;
 
-import input_manager.InputManager;
+import input_manager.InputManCLI;
 import ip_manager.IPManager;
 
 /**
@@ -8,36 +8,33 @@ import ip_manager.IPManager;
  */
 public class SystemManager {
 
-    private final  int INITIALIZATION = 0;
-    private final int INPUT = 1;
-    private final int IMG_PROC = 2;
-    private final int ANN = 3;
-    private final int OUTPUT = 4;
-    private final int DISPLAY = 5;
+    public static final int INPUT = 0;
+    public static final int IMG_PROC = 1;
+    public static final int ANN = 2;
+    public static final int OUTPUT = 3;
+    public static final int DISPLAY = 4;
 
-    private int state;
+    public static int state;
     private int info[];
 
     private IPManager ipManager;
-    private InputManager inputManager;
+    private InputManCLI inputManCLI;
 
     public void init_SystemManager(){
-
+        System.out.println("Initializing System Manager...");
         info = new int[6];
-        state = INITIALIZATION;
-        inputManager = new InputManager();
-        ipManager = new IPManager(inputManager.getImgOrig());
+        inputManCLI = new InputManCLI();
+        ipManager = new IPManager(inputManCLI.getImgOrig());
+        inputManCLI.init_InputManager();
+        ipManager.init_IPManager();
+        state = INPUT;
     }//init_SystemManager
 
     public void execute_SystemManager(){
         while(true){
             switch (state){
-                case INITIALIZATION:{
-                    ipManager.init_IPManager();
-                }break;
-
                 case INPUT:{
-
+                    inputManCLI.execute_InputManager();
                 }break;
 
                 case IMG_PROC:{

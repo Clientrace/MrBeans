@@ -18,7 +18,6 @@ public class ImageData {
 
     private List<MatOfPoint> contours;
 
-
     private int convexHullCount;
 
     private float ellipticality;

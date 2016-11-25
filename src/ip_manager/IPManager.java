@@ -8,13 +8,16 @@ import org.opencv.core.Mat;
 public class IPManager {
 
     private int[] info;
-    private final int BGSUBTRACTION = 0;
-    private final int SEGMENTATION = 1;
-    private final int NOISEFILTER = 2;
+    private final int INIT = 0;
+    private final int BGSUBTRACTION = 1;
+    private final int SEGMENTATION = 2;
+    private final int NOISEFILTER = 3;
 
     private BackgroundSubtraction backgroundSubtraction;
     private Segmentation segmentation;
+    private NoiseFiltering noiseFiltering;
     private Mat imgRaw;
+    private int state;
 
     public IPManager(Mat imgRaw){
         this.imgRaw = imgRaw;
@@ -25,11 +28,17 @@ public class IPManager {
         state = SEGMENTATION;
         backgroundSubtraction = new BackgroundSubtraction();
         segmentation = new Segmentation();
+
     }//init_IPManager
 
     public void execute_IPManager(){
         while(true){
             switch (state){
+                case INIT:{
+                    backgroundSubtraction.init_BackgroundSubtraction();
+                    segmentation.init_Segmentation();
+                    noiseFiltering.init_NoiseFiltering();
+                }
                 case BGSUBTRACTION:{
 
                 }break;
