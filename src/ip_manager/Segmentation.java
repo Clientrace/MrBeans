@@ -7,15 +7,16 @@ import org.opencv.core.Mat;
  */
 public class Segmentation {
 
-    private Mat imgOrig;
+    private ColorSpace colorSpace;
 
-    public void init_Segmentation(Mat imgOrig){
-        this.imgOrig = imgOrig.clone();
+    public void init_Segmentation(ColorSpace colorSpace){
+        System.out.println("Initializing Segmentation...");
+        this.colorSpace = colorSpace;
     }//init_Segmentation
 
 
     //execute Segmentation
     public void execute_Segmentation(){
-
+        System.out.println("Executing Segmentation...");
     }//execute_Segmentation
 }

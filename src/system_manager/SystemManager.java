@@ -51,7 +51,16 @@ public class SystemManager {
                 case IMG_PROC:{
                     ipManager.setImgOrig(inputManCLI.getImgOrig());
                     ipManager.execute_IPManager();
+                    state = ANN;
                 }break;
+
+                case ANN:{
+                    state = DISPLAY;
+                }break;
+
+                case DISPLAY:{
+                    state = INIT;
+                }
             }
         }
     }//execute_SystemManager

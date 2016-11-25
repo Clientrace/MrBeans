@@ -9,7 +9,7 @@ public class ANNManager {
     }
 
     public void execute_ANNManager(){
-
+        System.out.println("Executing ANNManager...");
     }
 
     public void destroy_ANNManager(){

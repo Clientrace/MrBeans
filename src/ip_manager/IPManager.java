@@ -13,6 +13,7 @@ public class IPManager {
     //Default values:
     public static final Scalar THRESH_LOW = new Scalar(70,130,50);
     public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
+    public static Mat procImg;
 
     private int[] info;
     private final int INIT = 0;
@@ -40,24 +41,35 @@ public class IPManager {
     }//init_IPManager
 
     public void execute_IPManager(){
-        while(true){
+        System.out.println("Executing IPManager...");
+        boolean done = false;
+        while(!done){
             switch (state){
                 case INIT:{
+                    procImg = imgOrig;
                     colorSpace.init_ColorSpace(imgOrig);
-                    backgroundSubtraction.init_BackgroundSubtraction(imgOrig);
-                    segmentation.init_Segmentation(imgOrig);
-                    noiseFiltering.init_NoiseFiltering(imgOrig);
+                    backgroundSubtraction.init_BackgroundSubtraction(colorSpace);
+                    segmentation.init_Segmentation(colorSpace);
+                    noiseFiltering.init_NoiseFiltering(colorSpace);
                     state = COLOR_SPACE;
                 }break;
                 case COLOR_SPACE:{
                     colorSpace.execute_ColorSpace();
+                    state = BGSUBTRACTION;
                 }break;
                 case BGSUBTRACTION:{
                     backgroundSubtraction.execute_BackgroundSubtraction();
+                    procImg = backgroundSubtraction.getBgsOutput();
+                    state = SEGMENTATION;
                 }break;
 
                 case SEGMENTATION:{
                     segmentation.execute_Segmentation();
+                    state = NOISEFILTER;
+                }break;
+
+                case NOISEFILTER:{
+                    done = true;
                 }break;
 
             }

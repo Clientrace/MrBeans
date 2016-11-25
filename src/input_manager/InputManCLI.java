@@ -1,5 +1,6 @@
 package input_manager;
 
+import ip_manager.IPManager;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
@@ -12,6 +13,7 @@ import java.util.Scanner;
  */
 public class InputManCLI {
     private Mat imgOrig;
+    private Mat procImg;
     private String imgPath;
     private SystemManager systemManager;
 
@@ -41,7 +43,7 @@ public class InputManCLI {
                     waitForInput = false;
                 }break;
                 case "output":{
-                    Invoke.showImg(imgOrig);
+                    Invoke.showImg(IPManager.procImg);
                 }break;
                 case "exit":{
                     System.out.println("Terminating System...");

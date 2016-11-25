@@ -24,6 +24,7 @@ public class ColorSpace {
 
     public void execute_ColorSpace(){
         //Add error handler here
+        System.out.println("Executing ColorSpaces...");
         Imgproc.cvtColor(imgOrig, imgHSV, Imgproc.COLOR_BGR2HSV);
         Imgproc.cvtColor(imgOrig, imgGrayScale, Imgproc.COLOR_BGR2GRAY);
         Imgproc.cvtColor(imgOrig, imgLab, Imgproc.COLOR_BGR2Lab);

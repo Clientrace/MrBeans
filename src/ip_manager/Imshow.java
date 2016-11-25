@@ -13,7 +13,6 @@ public class Imshow extends JFrame{
 
     private BufferedImage display;
 
-
     /**
      * Used to display Mat on a swing window frame. With default 800 x 600 window size
      * @param display

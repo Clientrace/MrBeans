@@ -1,15 +1,13 @@
 package input_manager;
 
+import ip_manager.Imshow;
 import org.opencv.core.Mat;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
-import java.awt.image.ImageObserver;
 import java.awt.image.WritableRaster;
 import java.io.File;
-import java.text.AttributedCharacterIterator;
 
 /**
  * Created by clientrace on 11/26/16.
@@ -31,7 +29,7 @@ public class Invoke {
     }
 
     public static void showImg(Mat img){
-
+        new Imshow(matToBuff(img));
     }
 
     public static BufferedImage matToBuff(Mat img){
