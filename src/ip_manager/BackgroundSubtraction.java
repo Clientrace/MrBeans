@@ -1,6 +1,8 @@
 package ip_manager;
 
+import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
 /**
@@ -13,29 +15,19 @@ public class BackgroundSubtraction {
     private Mat bgsOutput;
     private int info[] = new int[6];
 
-    //to be changed:
-    private double THRESH_LOW[];
-    private double THRESH_HIGH[];
-
     public void init_BackgroundSubtraction(Mat imgOrig){
         System.out.println("Initializing Background Subtraction...");
         this.imgOrig = imgOrig.clone();
+        bgsOutput = new Mat();
     }//init_BackgroundSubtraction
 
     public void execute_BackgroundSubtraction(){
         System.out.println("Executing Background Subtraction...");
+        Core.inRange(imgOrig,IPManager.THRESH_LOW,IPManager.THRESH_HIGH,bgsOutput);
     }//execute_BackgroundSubtraction
 
     public Mat getBgsOutput(){
         return bgsOutput;
-    }//getBgsOutput
-
-    public void setInfo(int[] info){
-        this.info = info;
-    }//setInfo
-
-    public int[] getInfo(){
-        return info;
-    }//getInfo
+    }
 
 }

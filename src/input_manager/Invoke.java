@@ -3,7 +3,13 @@ package input_manager;
 import org.opencv.core.Mat;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.awt.image.ImageObserver;
+import java.awt.image.WritableRaster;
 import java.io.File;
+import java.text.AttributedCharacterIterator;
 
 /**
  * Created by clientrace on 11/26/16.
@@ -24,5 +30,24 @@ public class Invoke {
         return null;
     }
 
+    public static void showImg(Mat img){
+
+    }
+
+    public static BufferedImage matToBuff(Mat img){
+        int type = 0;
+        if (img.channels() == 1) {
+            type = BufferedImage.TYPE_BYTE_GRAY;
+        }
+        else if (img.channels() == 3) {
+            type = BufferedImage.TYPE_3BYTE_BGR;
+        }
+        BufferedImage image = new BufferedImage(img.width(),img.height(),type);
+        WritableRaster raster = image.getRaster();
+        DataBufferByte dataBuffer = (DataBufferByte) raster.getDataBuffer();
+        byte[] data = dataBuffer.getData();
+        img.get(0, 0,data);
+        return image;
+    }
 
 }

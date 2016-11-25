@@ -1,6 +1,7 @@
 package ip_manager;
 
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 
 import java.awt.*;
 
@@ -8,6 +9,10 @@ import java.awt.*;
  * Created by clientrace on 11/21/16.
  */
 public class IPManager {
+
+    //Default values:
+    public static final Scalar THRESH_LOW = new Scalar(70,130,50);
+    public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
 
     private int[] info;
     private final int INIT = 0;
@@ -20,6 +25,7 @@ public class IPManager {
     private BackgroundSubtraction backgroundSubtraction;
     private Segmentation segmentation;
     private NoiseFiltering noiseFiltering;
+
     private Mat imgOrig;
     private int state;
 

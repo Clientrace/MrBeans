@@ -40,6 +40,9 @@ public class InputManCLI {
                     SystemManager.state = SystemManager.IMG_PROC;
                     waitForInput = false;
                 }break;
+                case "output":{
+                    Invoke.showImg(imgOrig);
+                }break;
                 case "exit":{
                     System.out.println("Terminating System...");
                     System.exit(0);
