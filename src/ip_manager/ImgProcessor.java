@@ -1,7 +1,5 @@
 package ip_manager;
 
-import org.opencv.core.Mat;
-
 
 /**
  * Created by clientrace on 11/26/16.

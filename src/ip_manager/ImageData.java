@@ -3,7 +3,6 @@ package ip_manager;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
 
-import java.awt.*;
 import java.util.List;
 
 /**

@@ -1,6 +1,5 @@
 package ip_manager;
 
-import input_manager.Invoke;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 

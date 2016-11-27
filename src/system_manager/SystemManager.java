@@ -3,8 +3,6 @@ package system_manager;
 import ann_manager.ANNManager;
 import input_manager.InputManCLI;
 import ip_manager.IPManager;
-import org.omg.CORBA.INITIALIZE;
-import org.opencv.core.Core;
 
 /**
  * Created by clientrace on 11/21/16.

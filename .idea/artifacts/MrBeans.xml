@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MrBeans">
+    <output-path>$PROJECT_DIR$/out/artifacts/MrBeans</output-path>
+    <root id="archive" name="MrBeans.jar">
+      <element id="module-output" name="MrBeans" />
+      <element id="extracted-dir" path="$USER_HOME$/Libraries/opencv-3.1.0/build/bin/opencv-310.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,10 +1,8 @@
 package input_manager;
 
-import ip_manager.IPManager;
 import ip_manager.Imshow;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 import system_manager.SystemManager;
 
 import java.util.Scanner;
