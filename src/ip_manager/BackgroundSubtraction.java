@@ -13,44 +13,47 @@ public class BackgroundSubtraction extends ImgProcessor{
     public static final int BINARIZE = 1;
     public static int state;
 
-    private Mat bgsOutput;
-    private IPManager ipManager;
-    private int info[] = new int[6];
+    private Mat input;
+    private Mat output;
 
-    public void init(IPManager ipManager){
-        System.out.println("Initializing Background Subtraction...");
-        this.ipManager = ipManager;
+    private boolean done;
+
+    public void init(){
+        System.out.println("\tInitializing Background Subtraction...");
         state = THRESHOLD;
-        bgsOutput = new Mat();
-    }//init_BackgroundSubtraction
+        input = new Mat();
+        output = new Mat();
+        done = false;
+    }
 
     public void execute(){
-        System.out.println("Executing Background Subtraction...");
-        boolean done = false;
         while(!done){
             switch (state){
                 case THRESHOLD: {
                     System.out.println("\tApplying Thresholding...");
-                    Core.inRange(ipManager.imageData.getImgHSV(),IPManager.THRESH_LOW,IPManager.THRESH_HIGH,bgsOutput);
+                    Core.inRange(input,IPManager.THRESH_LOW,IPManager.THRESH_HIGH,output);
                     state = BINARIZE;
                 }
                 break;
                 case BINARIZE: {
                     System.out.println("\tApplying Binarization...");
-                    Core.bitwise_not(bgsOutput,bgsOutput);
-                    ipManager.imageData.setBgsOutput(bgsOutput);
+                    Core.bitwise_not(output,output);
                     done = true;
                 }break;
             }
         }
-    }//execute_BackgroundSubtraction
+    }
 
     public void destroy(){
 
     }
 
-    public Mat getBgsOutput(){
-        return bgsOutput;
+    public void setInput(Mat input){
+        this.input = input;
+    }
+
+    public Mat getOutput(){
+        return output;
     }
 
 }

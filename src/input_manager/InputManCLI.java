@@ -18,7 +18,7 @@ public class InputManCLI {
 
     public void init_InputManager(SystemManager systemManager){
         this.systemManager = systemManager;
-        System.out.println("Initializing Input Manager...");
+        System.out.println("\tInitializing Input Manager...");
         imgPath = "path not set";
     }
 
@@ -27,6 +27,7 @@ public class InputManCLI {
         String options[];
         String command;
         boolean waitForInput = true;
+        System.out.println();
         while(waitForInput){
             System.out.print("> ");
             options = reader.nextLine().split(" ");
@@ -57,6 +58,10 @@ public class InputManCLI {
                         }
                         if(Invoke.hasStringVal(options,"-ws")){
                             output = systemManager.ipManager.getImageData().getWsOutput();
+                            new Imshow(Invoke.matToBuff(output));
+                        }
+                        if(Invoke.hasStringVal(options,"-nf")){
+                            output = systemManager.ipManager.getImageData().getNfOutput();
                             new Imshow(Invoke.matToBuff(output));
                         }
                     }

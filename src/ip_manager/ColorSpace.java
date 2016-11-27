@@ -11,57 +11,54 @@ public class ColorSpace extends ImgProcessor{
     public static final int HSV = 0;
     public static final int GRAY = 1;
     public static final int LAB = 2;
-    public static final int VAL = 3;
     public static int state;
 
-    private IPManager ipManager;
+    private Mat input;
+    private Mat[] output;
 
-    private Mat imgHSV;
-    private Mat imgGrayScale;
-    private Mat imgLab;
+    boolean done;
 
-    public void init(IPManager ipManager) {
-        System.out.println("Initializing ColorSpaces...");
-        this.ipManager = ipManager;
+    public void init() {
+        System.out.println("\tInitializing ColorSpaces...");
         state = HSV;
-        imgHSV = new Mat();
-        imgGrayScale = new Mat();
-        imgLab = new Mat();
-    }//init_ColorSpace
+        done = false;
+        input = new Mat();
+        output = new Mat[3];
+        for(int i=0; i<3; i++)
+            output[i] = new Mat();
+    }
 
     public void execute(){
-        //Add error handler here
-        System.out.println("Executing ColorSpaces...");
-        boolean done = false;
         while (!done){
             switch (state){
                 case HSV:{
                     System.out.println("\tConverting img to HSV...");
-                    Imgproc.cvtColor(ipManager.imageData.getImgOrig(), imgHSV, Imgproc.COLOR_BGR2HSV);
+                    Imgproc.cvtColor(input, output[HSV], Imgproc.COLOR_BGR2HSV);
                     state = GRAY;
                 }break;
                 case GRAY:{
                     System.out.println("\tConverting img to GRAY...");
-                    Imgproc.cvtColor(ipManager.imageData.getImgOrig(), imgGrayScale, Imgproc.COLOR_BGR2GRAY);
+                    Imgproc.cvtColor(input, output[GRAY], Imgproc.COLOR_BGR2GRAY);
                     state = LAB;
                 }break;
                 case LAB:{
                     System.out.println("\tConverting img to LAB...");
-                    Imgproc.cvtColor(ipManager.imageData.getImgOrig(), imgLab, Imgproc.COLOR_BGR2Lab);
-                    state = VAL;
-                }break;
-                case VAL:{
-                    System.out.println("\tCollecting output...");
-                    ipManager.imageData.setImgHSV(imgHSV);
-                    ipManager.imageData.setImgGRAY(imgGrayScale);
-                    ipManager.imageData.setImgLAB(imgLab);
+                    Imgproc.cvtColor(input, output[LAB], Imgproc.COLOR_BGR2Lab);
                     done = true;
                 }break;
             }
         }
-    }//execute_ColorSpace
+    }
 
     public void destroy(){
 
+    }
+
+    public void setInput(Mat input){
+        this.input = input;
+    }
+
+    public Mat[] getOutput(){
+        return output;
     }
 }

@@ -11,6 +11,8 @@ public class IPManager {
     //Default values:
     public static final Scalar THRESH_LOW = new Scalar(70,130,50);
     public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
+    public static final double OBJ_WIDTH_THRESH = 30;
+    public static final double OBJ_HEIGHT_THRESH = 30;
 
     private int[] info;
     private final int INIT = 0;
@@ -29,7 +31,7 @@ public class IPManager {
     private Mat imgOrig;
 
     public void init_IPManager(){
-        System.out.println("Initializing IPManager...");
+        System.out.println("\tInitializing IPManager");
         info = new int[6];
         state = INIT;
         imageData = new ImageData();
@@ -37,45 +39,65 @@ public class IPManager {
         backgroundSubtraction = new BackgroundSubtraction();
         segmentation = new Segmentation();
         noiseFiltering = new NoiseFiltering();
-    }//init_IPManager
+    }
 
     public void execute_IPManager(){
-        System.out.println("Executing IPManager...");
+        System.out.println("\tExecuting IPManager:");
         boolean done = false;
         while(!done){
             switch (state){
                 case INIT:{
-                    imageData.setImgOrig(imgOrig);
-                    colorSpace.init(this);
-                    backgroundSubtraction.init(this);
-                    segmentation.init(this);
-                    noiseFiltering.init(this);
+                    System.out.println("\tInitializing Image Processors...");
+                    colorSpace.init();
+                    backgroundSubtraction.init();
+                    segmentation.init();
+                    noiseFiltering.init();
                     state = COLOR_SPACE;
                 }break;
                 case COLOR_SPACE:{
+                    System.out.println("\tExecuting ColorSpaces...");
+                    colorSpace.setInput(imgOrig.clone());
                     colorSpace.execute();
+                    imageData.setImgOrig(imgOrig);
+                    imageData.setImgHSV(colorSpace.getOutput()[colorSpace.HSV]);
+                    imageData.setImgGRAY(colorSpace.getOutput()[colorSpace.GRAY]);
+                    imageData.setImgLAB(colorSpace.getOutput()[colorSpace.LAB]);
                     state = BGSUBTRACTION;
                 }break;
                 case BGSUBTRACTION:{
+                    System.out.println("\tExecuting Background Subtraction...");
+                    backgroundSubtraction.setInput(imageData.getImgHSV().clone());
                     backgroundSubtraction.execute();
-                    state = SEGMENTATION;
-                }break;
-
-                case SEGMENTATION:{
-                    segmentation.execute();
+                    imageData.setBgsOutput(backgroundSubtraction.getOutput());
                     state = NOISEFILTER;
                 }break;
 
                 case NOISEFILTER:{
+                    System.out.println("\tExecuting Pre Noise Filtering...");
+                    state = SEGMENTATION;
+                    noiseFiltering.setInput(imageData.getBgsOutput().clone());
+                    noiseFiltering.execute();
+                    imageData.setNfOutput(noiseFiltering.getOutput());
+                }break;
+
+                case SEGMENTATION:{
+                    System.out.println("\tExecuting Segmentation...");
+                    segmentation.setInput(imageData.getBgsOutput().clone());
+                    segmentation.execute();
+                    imageData.setWsOutput(segmentation.getOutput());
+                    imageData.setContours(segmentation.getContours());
                     done = true;
                 }break;
 
+
             }
         }
-    }//execute_IPManager
+    }
 
     public void destroy_IPManager(){
-
+        backgroundSubtraction.destroy();
+        segmentation.destroy();
+        noiseFiltering.destroy();
     }
 
     public void setImgOrig(Mat imgOrig){this.imgOrig = imgOrig;}

@@ -13,19 +13,14 @@ public class ImageData {
     private Mat imgHSV;
     private Mat imgGRAY;
     private Mat imgLAB;
-    private Mat imgOutput;
-    private Mat imgNoiseFiltered;
     private Mat imgBackgroudnSubtract;
     private Mat kmeansResult;
     private Mat bgsOutput;
     private Mat wsOutput;
-    private Mat segmentationOutput;
-    private Mat noiseFilterOutput;
-
+    private Mat nfOutput;
+    private Mat imgOutput;
     private List<MatOfPoint> contours;
-
     private int convexHullCount;
-
     private float ellipticality;
 
     public Mat getImgHSV() {
@@ -76,14 +71,6 @@ public class ImageData {
         this.imgOutput = imgOutput;
     }
 
-    public Mat getImgNoiseFiltered() {
-        return imgNoiseFiltered;
-    }
-
-    public void setImgNoiseFiltered(Mat imgNoiseFiltered) {
-        this.imgNoiseFiltered = imgNoiseFiltered;
-    }
-
     public Mat getImgBackgroudnSubtract() {
         return imgBackgroudnSubtract;
     }
@@ -108,28 +95,20 @@ public class ImageData {
         this.bgsOutput = bgsOutput;
     }
 
-    public Mat getSegmentationOutput() {
-        return segmentationOutput;
-    }
-
-    public void setSegmentationOutput(Mat segmentationOutput) {
-        this.segmentationOutput = segmentationOutput;
-    }
-
-    public Mat getNoiseFilterOutput() {
-        return noiseFilterOutput;
-    }
-
-    public void setNoiseFilterOutput(Mat noiseFilterOutput) {
-        this.noiseFilterOutput = noiseFilterOutput;
-    }
-
     public List<MatOfPoint> getContours() {
         return contours;
     }
 
     public void setContours(List<MatOfPoint> contours) {
         this.contours = contours;
+    }
+
+    public Mat getNfOutput() {
+        return nfOutput;
+    }
+
+    public void setNfOutput(Mat nfOutput) {
+        this.nfOutput = nfOutput;
     }
 
     public int getConvexHullCount() {
