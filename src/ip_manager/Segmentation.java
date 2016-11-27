@@ -1,8 +1,11 @@
 package ip_manager;
 
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
+import input_manager.Invoke;
+import org.opencv.core.*;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
+
+import java.util.ArrayList;
 
 /**
  * Created by clientrace on 11/21/16.
@@ -16,14 +19,17 @@ public class Segmentation extends ImgProcessor{
     public static int state;
 
     private IPManager ipManager;
+    private Mat bg;
     private Mat bin;
+    private Mat dist;
+    private Mat kernel;
     private Mat marker;
-    private ArrayList<MatOf>
+    private ArrayList<MatOfPoint> contours;
 
     public void init(IPManager ipManager){
         System.out.println("Initializing Segmentation...");
         this.ipManager = ipManager;
-        state = MARKERS;
+        state = DIST;
     }//init_Segmentation
 
 
@@ -34,27 +40,38 @@ public class Segmentation extends ImgProcessor{
         while (!done){
             switch (state){
                 case DIST:{
+                    System.out.println("\tApplying distance transform...");
+                    bin = ipManager.imageData.getBgsOutput().clone();
+                    bg = new Mat(bin.size(),CvType.CV_8UC1);
+                    kernel = Imgproc.getStructuringElement(Imgproc.MORPH_ELLIPSE, new Size(3,3));
+                    Imgproc.dilate(bin,bg,kernel);
                     state = MARKERS;
                 }
                 case MARKERS:{
                     System.out.println("\tGetting watershed markers...");
-                    bin = ipManager.imageData.getBgsOutput();
                     marker = new Mat(bin.size(), CvType.CV_32SC1);
-                    for(int i=0; i < marker.cols(); i++){
-                        for(int j=0; j < marker.rows(); j++){
-                            marker.put(j, i, 1);
+                    for(int i=0;i<marker.cols();i++){
+                        for(int j=0;j<marker.rows();j++){
+                            marker.put(j,i,1);
+                            if(bg.get(j,i)[0]!=0)
+                                marker.put(j,i,0);
                         }
                     }
                     state = WATERSHED;
                 }break;
                 case WATERSHED:{
                     System.out.println("\tApplying watershed...");
+                    Imgproc.cvtColor(bin,bin,Imgproc.COLOR_GRAY2BGR);
                     Imgproc.watershed(bin,marker);
+                    ipManager.imageData.setWsOutput(bin);
+                    Imgproc.cvtColor(bin,bin,Imgproc.COLOR_BGR2GRAY);
                     state = CONTOURS;
                 }break;
                 case CONTOURS:{
                     System.out.println("\tGetting contours...");
-
+                    contours = new ArrayList<>();
+                    bin.convertTo(bin,CvType.CV_8UC1);
+                    Imgproc.findContours(bin, contours, new Mat(), Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE);
                     done = true;
                 }break;
             }

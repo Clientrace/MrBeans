@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class InputManCLI {
     private Mat imgOrig;
-    private Mat procImg;
+    private Mat output;
     private String imgPath;
     private SystemManager systemManager;
 
@@ -44,11 +44,19 @@ public class InputManCLI {
                     SystemManager.state = SystemManager.IMG_PROC;
                     waitForInput = false;
                 }break;
+                case "input": {
+                    System.out.println("showing input...");
+                    new Imshow(Invoke.matToBuff(imgOrig));
+                }
                 case "output":{
                     if(options.length>1){
+                        System.out.println("showing output...");
                         if(Invoke.hasStringVal(options,"-bgs")) {
-                            System.out.println("showing output...");
-                            Mat output = systemManager.ipManager.getImageData().getBgsOutput();
+                            output = systemManager.ipManager.getImageData().getBgsOutput();
+                            new Imshow(Invoke.matToBuff(output));
+                        }
+                        if(Invoke.hasStringVal(options,"-ws")){
+                            output = systemManager.ipManager.getImageData().getWsOutput();
                             new Imshow(Invoke.matToBuff(output));
                         }
                     }

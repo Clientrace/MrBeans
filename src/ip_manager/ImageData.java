@@ -18,6 +18,7 @@ public class ImageData {
     private Mat imgBackgroudnSubtract;
     private Mat kmeansResult;
     private Mat bgsOutput;
+    private Mat wsOutput;
     private Mat segmentationOutput;
     private Mat noiseFilterOutput;
 
@@ -57,6 +58,14 @@ public class ImageData {
 
     public void setImgOrig(Mat imgOrig) {
         this.imgOrig = imgOrig;
+    }
+
+    public Mat getWsOutput() {
+        return wsOutput;
+    }
+
+    public void setWsOutput(Mat wsOutput) {
+        this.wsOutput = wsOutput;
     }
 
     public Mat getImgOutput() {
