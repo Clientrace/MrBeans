@@ -45,7 +45,8 @@ public class BackgroundSubtraction extends ImgProcessor{
     }
 
     public void destroy(){
-
+        input.release();
+        output.release();
     }
 
     public void setInput(Mat input){

@@ -2,6 +2,7 @@ package ip_manager;
 
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
+import system_manager.SystemManager;
 
 /**
  * Created by clientrace on 11/21/16.
@@ -20,6 +21,7 @@ public class IPManager {
     private final int BGSUBTRACTION = 2;
     private final int SEGMENTATION = 3;
     private final int NOISEFILTER = 4;
+    private final int DESTROY = 5;
     private int state;
 
     private ColorSpace colorSpace;
@@ -43,6 +45,10 @@ public class IPManager {
 
     public void execute_IPManager(){
         System.out.println("\tExecuting IPManager:");
+        if(imgOrig==null) {
+            System.out.println("\t[Err]: Null image input");
+            return;
+        }
         boolean done = false;
         while(!done){
             switch (state){
@@ -68,16 +74,16 @@ public class IPManager {
                     System.out.println("\tExecuting Background Subtraction...");
                     backgroundSubtraction.setInput(imageData.getImgHSV().clone());
                     backgroundSubtraction.execute();
-                    imageData.setBgsOutput(backgroundSubtraction.getOutput());
+                    imageData.setBgsOutput(backgroundSubtraction.getOutput().clone());
                     state = NOISEFILTER;
                 }break;
 
                 case NOISEFILTER:{
                     System.out.println("\tExecuting Pre Noise Filtering...");
-                    state = SEGMENTATION;
                     noiseFiltering.setInput(imageData.getBgsOutput().clone());
                     noiseFiltering.execute();
                     imageData.setNfOutput(noiseFiltering.getOutput());
+                    state = SEGMENTATION;
                 }break;
 
                 case SEGMENTATION:{
@@ -86,18 +92,19 @@ public class IPManager {
                     segmentation.execute();
                     imageData.setWsOutput(segmentation.getOutput());
                     imageData.setContours(segmentation.getContours());
-                    done = true;
+                    state = DESTROY;
                 }break;
 
+                case DESTROY:{
+                    System.out.println("\tDestroying Processors...");
+                    backgroundSubtraction.destroy();
+                    segmentation.destroy();
+                    noiseFiltering.destroy();
+                    done = true;
+                }
 
             }
         }
-    }
-
-    public void destroy_IPManager(){
-        backgroundSubtraction.destroy();
-        segmentation.destroy();
-        noiseFiltering.destroy();
     }
 
     public void setImgOrig(Mat imgOrig){this.imgOrig = imgOrig;}

@@ -39,19 +39,19 @@ public class InputManCLI {
                     systemManager.ipManager.setImgOrig(imgOrig);
                 }break;
                 case "path":{
-                    System.out.println(imgPath);
+                    System.out.println("\t"+imgPath);
                 }break;
                 case "exec":{
                     SystemManager.state = SystemManager.IMG_PROC;
                     waitForInput = false;
                 }break;
                 case "input": {
-                    System.out.println("showing input...");
+                    System.out.println("\tShowing input...");
                     new Imshow(Invoke.matToBuff(imgOrig));
                 }
                 case "output":{
                     if(options.length>1){
-                        System.out.println("showing output...");
+                        System.out.println("\tShowing output...");
                         if(Invoke.hasStringVal(options,"-bgs")) {
                             output = systemManager.ipManager.getImageData().getBgsOutput();
                             new Imshow(Invoke.matToBuff(output));
@@ -67,7 +67,7 @@ public class InputManCLI {
                     }
                 }break;
                 case "exit": {
-                    System.out.println("Terminating System...");
+                    System.out.println("\tTerminating System...");
                     System.exit(0);
                 }break;
             }

@@ -22,7 +22,7 @@ public class Invoke {
         int res = fileChooser.showOpenDialog(null);
         if(res == JFileChooser.APPROVE_OPTION){
             File selectedFile = fileChooser.getSelectedFile();
-            System.out.println("Path set to: "+selectedFile.getAbsolutePath());
+            System.out.println("\tPath set to: "+selectedFile.getAbsolutePath());
             return selectedFile.getAbsolutePath();
         }
         return null;

@@ -1,10 +1,7 @@
 package ip_manager;
 
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
 import org.opencv.imgproc.Imgproc;
-
-import java.util.ArrayList;
 
 /**
  * Created by clientrace on 11/26/16.
@@ -16,20 +13,16 @@ public class NoiseFiltering extends ImgProcessor{
 
     public static int state;
 
-    private Mat inputImg;
-    private Mat outputImg;
-    private ArrayList<MatOfPoint> inputContours;
-    private ArrayList<MatOfPoint> outputContours;
+    private Mat input;
+    private Mat output;
 
     private boolean done;
 
     public void init(){
         System.out.println("\tInitializing Noise Filtering...");
         state = BLUR;
-        inputImg = new Mat();
-        outputImg = new Mat();
-        inputContours = new ArrayList<>();
-        outputContours = new ArrayList<>();
+        input = new Mat();
+        output = new Mat();
         done = false;
     }
 
@@ -38,14 +31,14 @@ public class NoiseFiltering extends ImgProcessor{
             switch (state){
                 case BLUR:{
                     System.out.println("\tApplying Blur Functions...");
-                    Imgproc.medianBlur(inputImg,inputImg,9);
+                    Imgproc.medianBlur(input, input,9);
                     state = MORPH;
                 }break;
                 case MORPH:{
                     System.out.println("\tApplying Morphological Functions...");
-                    Imgproc.erode(inputImg,inputImg,new Mat());
-                    Imgproc.dilate(inputImg,inputImg,new Mat());
-                    outputImg = inputImg;
+                    Imgproc.erode(input, input,new Mat());
+                    Imgproc.dilate(input, input,new Mat());
+                    output = input;
                     done = true;
                 }break;
             }
@@ -53,15 +46,16 @@ public class NoiseFiltering extends ImgProcessor{
     }
 
     public void destroy(){
-
+        input.release();
+        output.release();
     }
 
     public void setInput(Mat input){
-        this.inputImg = input;
+        this.input = input;
     }
 
     public Mat getOutput(){
-        return outputImg;
+        return output;
     }
 
 

@@ -89,7 +89,14 @@ public class Segmentation extends ImgProcessor{
     }
 
     public void destroy(){
+        input.release();
+        output.release();
+        bg.release();
+        kernel.release();
+        marker.release();
 
+        for(int i =0; i<contours.size();i++)
+            contours.get(i).release();
     }
 
     public void setInput(Mat input){
