@@ -10,7 +10,8 @@ import org.opencv.core.Mat;
 public class BackgroundSubtraction extends ImgProcessor{
 
     public static final int THRESHOLD = 0;
-    public static final int BINARIZE = 1;
+    public static final int CHROMA_KEY = 1;
+    public static final int BINARIZE = 2;
     public static int state;
 
     private Mat input;
@@ -38,8 +39,37 @@ public class BackgroundSubtraction extends ImgProcessor{
                 case BINARIZE: {
                     System.out.println("\tApplying Binarization...");
                     Core.bitwise_not(output,output);
-                    done = true;
+                    state = CHROMA_KEY;
                 }break;
+                case CHROMA_KEY:{
+                    System.out.println("\t Removing unwanted pixels...");
+                    for(int i=0; i<output.rows(); i++){
+                        for(int j=0; j<output.cols(); j++){
+                            double[] bgr = input.get(i,j);
+                            switch (IPManager.CHROMA_KEY){
+                                case IPManager.BLUE:{
+                                    if(bgr[0]>bgr[1] && bgr[0]>bgr[2]){
+                                        if(bgr[1]<20 && bgr[2]<20)
+                                            output.put(i,j,0);
+                                    }
+                                }break;
+                                case IPManager.GREEN:{
+                                    if(bgr[1]>bgr[2] && bgr[1]>bgr[0]){
+                                        if(bgr[0]<20 && bgr[2]<20)
+                                            output.put(i,j,0);
+                                    }
+                                }break;
+                                case IPManager.RED:{
+                                    if(bgr[2]>bgr[1] && bgr[2]>bgr[1]){
+                                        if(bgr[1]<20 && bgr[0]<20)
+                                            output.put(i,j,0);
+                                    }
+                                }break;
+                            }
+                        }
+                    }
+                    done = true;
+                }
             }
         }
     }

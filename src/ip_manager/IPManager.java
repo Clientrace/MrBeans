@@ -10,10 +10,17 @@ import system_manager.SystemManager;
 public class IPManager {
 
     //Default values:
+    public static final int RED = 0;
+    public static final int BLUE = 1;
+    public static final int GREEN = 2;
+
     public static final Scalar THRESH_LOW = new Scalar(70,130,50);
     public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
     public static final double OBJ_WIDTH_THRESH = 30;
     public static final double OBJ_HEIGHT_THRESH = 30;
+    public static final int CHROMA_KEY = BLUE;
+
+
 
     private int[] info;
     private final int INIT = 0;
