@@ -20,8 +20,6 @@ public class ImageData {
     private Mat nfOutput;
     private Mat imgOutput;
     private List<MatOfPoint> contours;
-    private int convexHullCount;
-    private float ellipticality;
 
     public Mat getImgHSV() {
         return imgHSV;
@@ -111,19 +109,4 @@ public class ImageData {
         this.nfOutput = nfOutput;
     }
 
-    public int getConvexHullCount() {
-        return convexHullCount;
-    }
-
-    public void setConvexHullCount(int convexHullCount) {
-        this.convexHullCount = convexHullCount;
-    }
-
-    public float getEllipticality() {
-        return ellipticality;
-    }
-
-    public void setEllipticality(float ellipticality) {
-        this.ellipticality = ellipticality;
-    }
 }

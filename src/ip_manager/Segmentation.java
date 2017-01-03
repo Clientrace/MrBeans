@@ -1,6 +1,7 @@
 package ip_manager;
 
 import org.opencv.core.*;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Segmentation extends ImgProcessor{
     private Mat kernel;
     private Mat marker;
     private ArrayList<MatOfPoint> contours;
+    private ArrayList<Mat> croppedImgs;
 
     private boolean done;
 
@@ -35,6 +37,7 @@ public class Segmentation extends ImgProcessor{
         kernel = new Mat();
         marker = new Mat();
         done = false;
+        croppedImgs = new ArrayList<>();
         state = DIST;
     }
 
@@ -71,19 +74,29 @@ public class Segmentation extends ImgProcessor{
                 case CONTOURS:{
                     System.out.println("\tGetting contours...");
                     input.convertTo(input,CvType.CV_8UC1);
-                    Imgproc.findContours(input, contours, new Mat(), Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE);
+                    Imgproc.findContours(input.clone(), contours, new Mat(), Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE);
                     output = input;
                     state = CLEAN;
                 }break;
                 case CLEAN:{
                     System.out.println("\tCleaning contours...");
                     for(int i=0; i<contours.size(); i++){
-                        if(contours.get(i).width()<IPManager.OBJ_WIDTH_THRESH ||
-                                contours.get(i).height()<IPManager.OBJ_HEIGHT_THRESH)
+                        Rect r = Imgproc.boundingRect(contours.get(i));
+                        Mat img = input.submat(r);
+                        if(img.width()<IPManager.OBJ_WIDTH_THRESH ||
+                                img.height()<IPManager.OBJ_HEIGHT_THRESH) {
                             contours.remove(i);
+                            i--;
+                        }
+                    }
+                    for(int i=0; i<contours.size(); i++){
+                        Rect r = Imgproc.boundingRect(contours.get(i));
+                        Mat img = input.submat(r);
+                        Imgcodecs.imwrite("res/contours/"+img.width()+"x"+img.height()+"cont"+i+".jpg",img);
                     }
                     done = true;
                 }
+
             }
         }
     }

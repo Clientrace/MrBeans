@@ -1,8 +1,13 @@
 package ip_manager;
 
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 import system_manager.SystemManager;
+
+import java.util.ArrayList;
 
 /**
  * Created by clientrace on 11/21/16.
@@ -16,11 +21,10 @@ public class IPManager {
 
     public static final Scalar THRESH_LOW = new Scalar(70,130,50);
     public static final Scalar THRESH_HIGH = new Scalar(140,255,255);
+
     public static final double OBJ_WIDTH_THRESH = 30;
     public static final double OBJ_HEIGHT_THRESH = 30;
     public static final int CHROMA_KEY = BLUE;
-
-
 
     private int[] info;
     private final int INIT = 0;
@@ -28,13 +32,20 @@ public class IPManager {
     private final int BGSUBTRACTION = 2;
     private final int SEGMENTATION = 3;
     private final int NOISEFILTER = 4;
-    private final int DESTROY = 5;
+    private final int SIEVE = 5;
+    private final int SHAPE = 6;
+    private final int COLOR = 8;
+    private final int DESTROY = 9;
     private int state;
 
+    private ArrayList<CoffeeBean> coffeeBean;
     private ColorSpace colorSpace;
     private BackgroundSubtraction backgroundSubtraction;
     private Segmentation segmentation;
     private NoiseFiltering noiseFiltering;
+    private SieveAnalyzer sieveAnalyzer;
+    private ShapeAnalyzer shapeAnalyzer;
+    private ColorAnalyzer colorAnalyzer;
 
     public ImageData imageData;
     private Mat imgOrig;
@@ -48,6 +59,10 @@ public class IPManager {
         backgroundSubtraction = new BackgroundSubtraction();
         segmentation = new Segmentation();
         noiseFiltering = new NoiseFiltering();
+        sieveAnalyzer = new SieveAnalyzer();
+        shapeAnalyzer = new ShapeAnalyzer();
+        colorAnalyzer = new ColorAnalyzer();
+        coffeeBean = new ArrayList<>();
     }
 
     public void execute_IPManager(){
@@ -99,14 +114,50 @@ public class IPManager {
                     segmentation.execute();
                     imageData.setWsOutput(segmentation.getOutput());
                     imageData.setContours(segmentation.getContours());
-                    state = DESTROY;
+                    for(int i=0;i<imageData.getContours().size();i++) {
+                        Rect r = Imgproc.boundingRect(imageData.getContours().get(i));
+                        Mat img =   imgOrig.submat(r);
+                        Mat cimg = imageData.getWsOutput().submat(r);
+                        coffeeBean.add(new CoffeeBean(imageData.getContours().get(i),img,cimg));
+                    }
+                    Imgcodecs.imwrite("res/imgproc/ws.png",imageData.getWsOutput());
+                    state = SIEVE;
                 }break;
+
+                case SIEVE:{
+                    System.out.println("\tExecuting Sieve Analyzer...");
+                    sieveAnalyzer.setCoffeeBean(coffeeBean);
+                    sieveAnalyzer.init();
+                    sieveAnalyzer.execute();
+                    coffeeBean = sieveAnalyzer.getCoffeeBean();
+
+
+                    //print coffee bean data:
+                    for(int i=0;i<coffeeBean.size();i++){
+                        System.out.println("No. "+i);
+                        System.out.println("width: "+coffeeBean.get(i).getWidth());
+                        System.out.println("height: "+coffeeBean.get(i).getHeight());
+                        System.out.println("pixelCount: "+coffeeBean.get(i).getPixelCount()+"\n");
+                    }
+                    state = SHAPE;
+
+                }break;
+
+                case SHAPE:{
+                    System.out.println("\tExecuting Shape Analyzer...");
+                    shapeAnalyzer.setCoffeeBean(coffeeBean);
+                    shapeAnalyzer.init();
+                    shapeAnalyzer.execute();
+                    coffeeBean = shapeAnalyzer.getCoffeeBean();
+                    state = DESTROY;
+                }
 
                 case DESTROY:{
                     System.out.println("\tDestroying Processors...");
                     backgroundSubtraction.destroy();
                     segmentation.destroy();
                     noiseFiltering.destroy();
+                    sieveAnalyzer.destroy();
                     done = true;
                 }
 

@@ -5,4 +5,6 @@ package ip_manager;
  */
 public class ColorAnalyzer {
 
+
+
 }
