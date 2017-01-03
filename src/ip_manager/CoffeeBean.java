@@ -12,9 +12,10 @@ public class CoffeeBean {
     private Mat beanImg;
 
     //Shape:
-    private int convexHullCount;
+    private double convexHullWidth;
+    private double convexHullHeight;
     private int innerContourCount;
-    private float ellipticality;
+    private double ellipticality;
 
     //SieveAnalyzer:
     private double width;
@@ -54,12 +55,20 @@ public class CoffeeBean {
         this.cropped = cropped;
     }
 
-    public int getConvexHullCount() {
-        return convexHullCount;
+    public double getConvexHullWidth() {
+        return convexHullWidth;
     }
 
-    public void setConvexHullCount(int convexHullCount) {
-        this.convexHullCount = convexHullCount;
+    public void setConvexHullWidth(double convexHullWidth) {
+        this.convexHullWidth = convexHullWidth;
+    }
+
+    public double getConvexHullHeight() {
+        return convexHullHeight;
+    }
+
+    public void setConvexHullHeight(double convexHullHeight) {
+        this.convexHullHeight = convexHullHeight;
     }
 
     public int getInnerContourCount() {
@@ -70,11 +79,11 @@ public class CoffeeBean {
         this.innerContourCount = innerContourCount;
     }
 
-    public float getEllipticality() {
+    public double getEllipticality() {
         return ellipticality;
     }
 
-    public void setEllipticality(float ellipticality) {
+    public void setEllipticality(double ellipticality) {
         this.ellipticality = ellipticality;
     }
 

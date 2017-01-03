@@ -1,7 +1,6 @@
 package ip_manager;
 
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
+import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
@@ -13,34 +12,41 @@ import java.util.Date;
  */
 public class ShapeAnalyzer {
 
-    public static final int INNER = 0;
-    public static final int HULL = 1;
-    public static final int ELLIPTICALITY = 2;
+    public static final int HULL = 0;
+    public static final int ELLIPTICALITY = 1;
 
     private int state;
     private ArrayList<CoffeeBean> coffeeBean;
 
     public void init(){
-        state = INNER;
+        state = HULL;
     }
 
     public void execute(){
         boolean done = false;
         while(!done){
             switch (state){
-                case INNER:{
-                    for(int i=0;i<coffeeBean.size();i++){
-                        Mat img = coffeeBean.get(i).getBeanImg().clone();
-                        Imgproc.cvtColor(img,img,Imgproc.COLOR_BGR2GRAY);
-                        Imgproc.threshold(img,img,0,55,Imgproc.THRESH_BINARY);
-                        Imgcodecs.imwrite("test"+i+".png",img);
-                    }
-                    state = HULL;
-                }
                 case HULL:{
+                    state = ELLIPTICALITY;
+                    for(int i=0;i<coffeeBean.size();i++){
+                        MatOfInt hull = new MatOfInt();
+                        Imgproc.convexHull(coffeeBean.get(i).getContour(),hull);
+                        Size s = hull.size();
+                        double w = hull.width();
+                        double h = hull.height();
+                        coffeeBean.get(i).setConvexHullWidth(w);
+                        coffeeBean.get(i).setConvexHullHeight(h);
+                    }
                     state = ELLIPTICALITY;
                 }
                 case ELLIPTICALITY:{
+                    for(int i=0;i<coffeeBean.size();i++){
+                        MatOfPoint2f contours2f = new MatOfPoint2f(coffeeBean.get(i).getContour());
+                        double perimeter = Imgproc.arcLength(contours2f,true);
+                        double area = Imgproc.contourArea(coffeeBean.get(i).getContour());
+                        double ellipticality = (4*area*Math.PI)/(float)(Math.pow(perimeter,2));
+                        coffeeBean.get(i).setEllipticality(ellipticality);
+                    }
                     done = true;
                 }
             }

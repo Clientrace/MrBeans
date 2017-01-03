@@ -7,24 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bddc91a-f779-4dcb-84cd-94301b0b6d4f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MrBeans/IPManager.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/IPManager.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test9.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MrBeans/MrBeans.jar" afterPath="$PROJECT_DIR$/out/artifacts/MrBeans/MrBeans.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ann_manager/ANNManager.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ann_manager/ANNManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/BackgroundSubtraction.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/BackgroundSubtraction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/IPManager.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/IPManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/Segmentation.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/Segmentation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/ShapeAnalyzer.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/ShapeAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/SieveAnalyzer.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/SieveAnalyzer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/imgproc/ws.png" afterPath="$PROJECT_DIR$/res/imgproc/ws.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ann_manager/ANNManager.java" afterPath="$PROJECT_DIR$/src/ann_manager/ANNManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" afterPath="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/IPManager.java" afterPath="$PROJECT_DIR$/src/ip_manager/IPManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/ImageData.java" afterPath="$PROJECT_DIR$/src/ip_manager/ImageData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/Segmentation.java" afterPath="$PROJECT_DIR$/src/ip_manager/Segmentation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" afterPath="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" afterPath="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java" afterPath="$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java" />
     </list>
     <ignored path="MrBeans.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,15 +50,15 @@
             <file leaf-file-name="ShapeAnalyzer.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="450">
-                    <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+                  <state relative-caret-position="774">
+                    <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
                     <folding>
-                      <element signature="e#504#505#0" expanded="true" />
-                      <element signature="e#533#534#0" expanded="true" />
-                      <element signature="e#1401#1402#0" expanded="true" />
-                      <element signature="e#1445#1446#0" expanded="true" />
-                      <element signature="e#1496#1497#0" expanded="true" />
-                      <element signature="e#1529#1530#0" expanded="true" />
+                      <element signature="e#428#429#0" expanded="true" />
+                      <element signature="e#456#457#0" expanded="true" />
+                      <element signature="e#1929#1930#0" expanded="true" />
+                      <element signature="e#1973#1974#0" expanded="true" />
+                      <element signature="e#2024#2025#0" expanded="true" />
+                      <element signature="e#2057#2058#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -143,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Segmentation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Segmentation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ip_manager/Segmentation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="84" column="42" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+            <state relative-caret-position="377">
+              <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -156,8 +154,8 @@
       <file leaf-file-name="IPManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ip_manager/IPManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
+            <state relative-caret-position="216">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,53 +171,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoffeeBean.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CoffeeBean.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#892#893#0" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1011#1012#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1084#1085#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#1161#1162#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-                <element signature="e#1258#1259#0" expanded="true" />
-                <element signature="e#1312#1313#0" expanded="true" />
-                <element signature="e#1353#1354#0" expanded="true" />
-                <element signature="e#1393#1394#0" expanded="true" />
-                <element signature="e#1456#1457#0" expanded="true" />
-                <element signature="e#1514#1515#0" expanded="true" />
-                <element signature="e#1553#1554#0" expanded="true" />
-                <element signature="e#1589#1590#0" expanded="true" />
-                <element signature="e#1646#1647#0" expanded="true" />
-                <element signature="e#1696#1697#0" expanded="true" />
-                <element signature="e#1728#1729#0" expanded="true" />
-                <element signature="e#1756#1757#0" expanded="true" />
-                <element signature="e#1798#1799#0" expanded="true" />
-                <element signature="e#1832#1833#0" expanded="true" />
-                <element signature="e#1865#1866#0" expanded="true" />
-                <element signature="e#1894#1895#0" expanded="true" />
-                <element signature="e#1938#1939#0" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2008#2009#0" expanded="true" />
-                <element signature="e#2041#2042#0" expanded="true" />
-                <element signature="e#2090#2091#0" expanded="true" />
-                <element signature="e#2134#2135#0" expanded="true" />
-                <element signature="e#2175#2176#0" expanded="true" />
-                <element signature="e#2210#2211#0" expanded="true" />
-                <element signature="e#2268#2269#0" expanded="true" />
-                <element signature="e#2316#2317#0" expanded="true" />
+                <element signature="e#754#755#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#865#866#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#933#934#0" expanded="true" />
+                <element signature="e#983#984#0" expanded="true" />
+                <element signature="e#1021#1022#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1305#1306#0" expanded="true" />
+                <element signature="e#1359#1360#0" expanded="true" />
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1441#1442#0" expanded="true" />
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1561#1562#0" expanded="true" />
+                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+                <element signature="e#1705#1706#0" expanded="true" />
+                <element signature="e#1763#1764#0" expanded="true" />
+                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1839#1840#0" expanded="true" />
+                <element signature="e#1897#1898#0" expanded="true" />
+                <element signature="e#1947#1948#0" expanded="true" />
+                <element signature="e#1979#1980#0" expanded="true" />
+                <element signature="e#2007#2008#0" expanded="true" />
+                <element signature="e#2049#2050#0" expanded="true" />
+                <element signature="e#2083#2084#0" expanded="true" />
+                <element signature="e#2116#2117#0" expanded="true" />
+                <element signature="e#2145#2146#0" expanded="true" />
+                <element signature="e#2189#2190#0" expanded="true" />
+                <element signature="e#2225#2226#0" expanded="true" />
+                <element signature="e#2259#2260#0" expanded="true" />
+                <element signature="e#2292#2293#0" expanded="true" />
+                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2385#2386#0" expanded="true" />
+                <element signature="e#2426#2427#0" expanded="true" />
+                <element signature="e#2461#2462#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+                <element signature="e#2567#2568#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -278,9 +280,9 @@
         <option value="$PROJECT_DIR$/src/output_manager/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/ImageData.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/IPManager.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
       </list>
     </option>
   </component>
@@ -295,7 +297,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="683" />
+    <option name="x" value="-1" />
     <option name="width" value="684" />
     <option name="height" value="743" />
   </component>
@@ -631,7 +633,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="683" y="0" width="684" height="743" extended-state="4" />
+    <frame x="-1" y="0" width="684" height="743" extended-state="5" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -991,60 +993,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
+    <entry file="file://$PROJECT_DIR$/src/output_manager/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-            <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1646#1647#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1728#1729#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1894#1895#0" expanded="true" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#1974#1975#0" expanded="true" />
-            <element signature="e#2008#2009#0" expanded="true" />
-            <element signature="e#2041#2042#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2210#2211#0" expanded="true" />
-            <element signature="e#2268#2269#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorSpace.java">
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/Segmentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="377">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1062,39 +1022,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ip_manager/IPManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
+        <state relative-caret-position="216">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/output_manager/FileHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorSpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/Segmentation.java">
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="84" column="42" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="242">
+          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1021#1022#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1705#1706#0" expanded="true" />
+            <element signature="e#1763#1764#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1839#1840#0" expanded="true" />
+            <element signature="e#1897#1898#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#1979#1980#0" expanded="true" />
+            <element signature="e#2007#2008#0" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2083#2084#0" expanded="true" />
+            <element signature="e#2116#2117#0" expanded="true" />
+            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#2189#2190#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2259#2260#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2385#2386#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2461#2462#0" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+            <element signature="e#2567#2568#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="774">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+            <element signature="e#1973#1974#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2057#2058#0" expanded="true" />
           </folding>
         </state>
       </provider>
