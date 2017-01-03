@@ -130,15 +130,6 @@ public class IPManager {
                     sieveAnalyzer.init();
                     sieveAnalyzer.execute();
                     coffeeBean = sieveAnalyzer.getCoffeeBean();
-
-
-                    //print coffee bean data:
-                    for(int i=0;i<coffeeBean.size();i++){
-                        System.out.println("No. "+i);
-                        System.out.println("width: "+coffeeBean.get(i).getWidth());
-                        System.out.println("height: "+coffeeBean.get(i).getHeight());
-                        System.out.println("pixelCount: "+coffeeBean.get(i).getPixelCount()+"\n");
-                    }
                     state = SHAPE;
 
                 }break;
@@ -153,6 +144,16 @@ public class IPManager {
                 }
 
                 case DESTROY:{
+                    //print coffee bean data:
+                    for(int i=0;i<coffeeBean.size();i++){
+                        System.out.println("No. "+i);
+                        System.out.println("width: "+coffeeBean.get(i).getWidth());
+                        System.out.println("height: "+coffeeBean.get(i).getHeight());
+                        System.out.println("pixelCount: "+coffeeBean.get(i).getPixelCount());
+                        System.out.println("hull width: "+coffeeBean.get(i).getConvexHullWidth());
+                        System.out.println("hull height: "+coffeeBean.get(i).getConvexHullHeight());
+                        System.out.println("ellipticality: "+coffeeBean.get(i).getEllipticality()+"\n");
+                    }
                     System.out.println("\tDestroying Processors...");
                     backgroundSubtraction.destroy();
                     segmentation.destroy();

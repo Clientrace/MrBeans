@@ -38,17 +38,17 @@ public class ShapeAnalyzer {
                         coffeeBean.get(i).setConvexHullHeight(h);
                     }
                     state = ELLIPTICALITY;
-                }
+                }break;
                 case ELLIPTICALITY:{
                     for(int i=0;i<coffeeBean.size();i++){
-                        MatOfPoint2f contours2f = new MatOfPoint2f(coffeeBean.get(i).getContour());
+                        MatOfPoint2f contours2f = new MatOfPoint2f(coffeeBean.get(i).getContour().toArray());
                         double perimeter = Imgproc.arcLength(contours2f,true);
                         double area = Imgproc.contourArea(coffeeBean.get(i).getContour());
                         double ellipticality = (4*area*Math.PI)/(float)(Math.pow(perimeter,2));
                         coffeeBean.get(i).setEllipticality(ellipticality);
                     }
                     done = true;
-                }
+                }break;
             }
         }
     }

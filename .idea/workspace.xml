@@ -7,21 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bddc91a-f779-4dcb-84cd-94301b0b6d4f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test9.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MrBeans/MrBeans.jar" afterPath="$PROJECT_DIR$/out/artifacts/MrBeans/MrBeans.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/CoffeeBean.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/CoffeeBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/IPManager.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/IPManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/ShapeAnalyzer.class" afterPath="$PROJECT_DIR$/out/production/MrBeans/ip_manager/ShapeAnalyzer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/imgproc/ws.png" afterPath="$PROJECT_DIR$/res/imgproc/ws.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" afterPath="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" afterPath="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/IPManager.java" afterPath="$PROJECT_DIR$/src/ip_manager/IPManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" afterPath="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" />
     </list>
     <ignored path="MrBeans.iws" />
@@ -47,18 +40,18 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="ShapeAnalyzer.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="ShapeAnalyzer.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="774">
-                    <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+                  <state relative-caret-position="342">
+                    <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
                     <folding>
                       <element signature="e#428#429#0" expanded="true" />
                       <element signature="e#456#457#0" expanded="true" />
-                      <element signature="e#1929#1930#0" expanded="true" />
-                      <element signature="e#1973#1974#0" expanded="true" />
-                      <element signature="e#2024#2025#0" expanded="true" />
-                      <element signature="e#2057#2058#0" expanded="true" />
+                      <element signature="e#1951#1952#0" expanded="true" />
+                      <element signature="e#1995#1996#0" expanded="true" />
+                      <element signature="e#2046#2047#0" expanded="true" />
+                      <element signature="e#2079#2080#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -67,8 +60,8 @@
             <file leaf-file-name="SieveAnalyzer.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="336">
-                    <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+                  <state relative-caret-position="534">
+                    <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
                     <folding>
                       <element signature="e#2769#2770#0" expanded="true" />
                       <element signature="e#2802#2803#0" expanded="true" />
@@ -85,6 +78,20 @@
                     <folding>
                       <element signature="e#657#658#0" expanded="true" />
                       <element signature="e#687#688#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="CoffeeBean.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="399">
+                    <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#2007#2008#0" expanded="true" />
+                      <element signature="e#2057#2058#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -121,12 +128,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorAnalyzer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ColorAnalyzer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,8 +165,8 @@
       <file leaf-file-name="IPManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ip_manager/IPManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="154" column="101" selection-start-line="154" selection-start-column="101" selection-end-line="154" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -167,62 +178,6 @@
             <state relative-caret-position="324">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoffeeBean.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#754#755#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#827#828#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#933#934#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-                <element signature="e#1052#1053#0" expanded="true" />
-                <element signature="e#1082#1083#0" expanded="true" />
-                <element signature="e#1125#1126#0" expanded="true" />
-                <element signature="e#1163#1164#0" expanded="true" />
-                <element signature="e#1205#1206#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-                <element signature="e#1305#1306#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
-                <element signature="e#1505#1506#0" expanded="true" />
-                <element signature="e#1561#1562#0" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
-                <element signature="e#1642#1643#0" expanded="true" />
-                <element signature="e#1705#1706#0" expanded="true" />
-                <element signature="e#1763#1764#0" expanded="true" />
-                <element signature="e#1803#1804#0" expanded="true" />
-                <element signature="e#1839#1840#0" expanded="true" />
-                <element signature="e#1897#1898#0" expanded="true" />
-                <element signature="e#1947#1948#0" expanded="true" />
-                <element signature="e#1979#1980#0" expanded="true" />
-                <element signature="e#2007#2008#0" expanded="true" />
-                <element signature="e#2049#2050#0" expanded="true" />
-                <element signature="e#2083#2084#0" expanded="true" />
-                <element signature="e#2116#2117#0" expanded="true" />
-                <element signature="e#2145#2146#0" expanded="true" />
-                <element signature="e#2189#2190#0" expanded="true" />
-                <element signature="e#2225#2226#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2292#2293#0" expanded="true" />
-                <element signature="e#2341#2342#0" expanded="true" />
-                <element signature="e#2385#2386#0" expanded="true" />
-                <element signature="e#2426#2427#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2519#2520#0" expanded="true" />
-                <element signature="e#2567#2568#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -275,13 +230,13 @@
         <option value="$PROJECT_DIR$/src/ann_manager/ANNManager2.java" />
         <option value="$PROJECT_DIR$/src/system_manager/SystemManager.java" />
         <option value="$PROJECT_DIR$/src/ann_manager/ANNManager.java" />
-        <option value="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/Segmentation.java" />
         <option value="$PROJECT_DIR$/src/output_manager/FileHandler.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/ImageData.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/IPManager.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/ip_manager/CoffeeBean.java" />
       </list>
     </option>
@@ -297,9 +252,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="684" />
-    <option name="height" value="743" />
+    <option name="y" value="4" />
+    <option name="width" value="676" />
+    <option name="height" value="739" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -633,7 +588,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="684" height="743" extended-state="5" />
+    <frame x="0" y="4" width="676" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -966,33 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/system_manager/SystemManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/ImageData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding>
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/output_manager/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1009,25 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2802#2803#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/IPManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorSpace.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1036,70 +945,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/IPManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+        <state relative-caret-position="414">
+          <caret line="154" column="101" selection-start-line="154" selection-start-column="101" selection-end-line="154" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/ImageData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-            <element signature="e#1705#1706#0" expanded="true" />
-            <element signature="e#1763#1764#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
-            <element signature="e#1947#1948#0" expanded="true" />
-            <element signature="e#1979#1980#0" expanded="true" />
-            <element signature="e#2007#2008#0" expanded="true" />
-            <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#2083#2084#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
-            <element signature="e#2189#2190#0" expanded="true" />
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2292#2293#0" expanded="true" />
-            <element signature="e#2341#2342#0" expanded="true" />
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2426#2427#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2519#2520#0" expanded="true" />
-            <element signature="e#2567#2568#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/system_manager/SystemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ip_manager/ShapeAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
           <folding>
             <element signature="e#428#429#0" expanded="true" />
             <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
-            <element signature="e#1973#1974#0" expanded="true" />
-            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#1995#1996#0" expanded="true" />
+            <element signature="e#2046#2047#0" expanded="true" />
+            <element signature="e#2079#2080#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/SieveAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+          <folding>
+            <element signature="e#2769#2770#0" expanded="true" />
+            <element signature="e#2802#2803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/ColorAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ip_manager/CoffeeBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2007#2008#0" expanded="true" />
             <element signature="e#2057#2058#0" expanded="true" />
           </folding>
         </state>

@@ -24,6 +24,10 @@ public class CoffeeBean {
 
     //Color Analyzer
     private double[] averageColor;
+    private double highHUE;
+    private double lowHUE;
+    private double highSAT;
+    private double lowSAT;
 
     public CoffeeBean(MatOfPoint contour, Mat beanImg, Mat cropped){
         this.contour = contour;
